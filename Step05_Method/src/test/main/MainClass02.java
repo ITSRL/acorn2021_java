@@ -11,7 +11,7 @@ public class MainClass02 {
 		myHome.relax("김구라");
 		//집에서 100번 쉬어 보세요.
 		for(int i=0; i<100; i++) {
-			myHome.relax("원숭이");
+			myHome.relax(i+1+"번 원숭이");
 		}
 	}
 }

@@ -17,6 +17,7 @@ public class MainClass04 {
 		System.out.println("- 위와 동일한 작업을 1 줄의 코딩으로 한다면?");
 		
 		new MyObject().usePhone(new Phone());
+		//생성해서 한번 쓰고 버리겠다는 의미
 	}
 }
 
