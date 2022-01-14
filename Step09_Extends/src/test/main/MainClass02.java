@@ -18,6 +18,11 @@ public class MainClass02 {
 		Phone p2=new HandPhone();
 		//HandPhone 객체를 생성해서 참조값을 Object type 변수에 담기 
 		Object p3=new HandPhone();
+		
+		
+		//Phone phone=new Phone();		
+		//HandPhone p4=(HandPhone)phone;
+		// 이건 당연히 오류가 날 수 밖에 없어요. 전화기가 핸드폰이 될 순 없기 때문이죠???
 	}
 }
 

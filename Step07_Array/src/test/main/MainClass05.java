@@ -25,6 +25,7 @@ public class MainClass05 {
 		*/
 		for(int i=0; i<cars.length; i++) {
 			cars[i].drive();
+			//여기서 cars는 Car[]타입이다. Car타입이 아니고! 대신 Car[i]는 car 타입이다.결국 car타입에 .찍은거야
 		}
 	}
 }
