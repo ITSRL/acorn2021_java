@@ -5,7 +5,7 @@ import test.mypac.Weapon;
 
 public class MainClass03 {
 	// Inner Class (내부 클래스에 한해서 필요하다면 static 예약어를 붙일수 있다) 
-	static class AirPlane extends Weapon{
+	static class AirPlane extends Weapon{ //static을 안붙이면 사용할 수가 없어지네... heap영역에 만들어지지가 않아서?
 		@Override
 		public void attack() {
 			System.out.println("공중에서 공격을 해요");

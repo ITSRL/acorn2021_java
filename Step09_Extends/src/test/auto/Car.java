@@ -1,10 +1,10 @@
 package test.auto;
 
 public class Car {
-	//protected 접근 지정자를 가진 필드
+	//protected 접근 지정자를 가진 필드 (같은 동일한 패키지 내에서만 접근 할 수 있어요)
 	protected Engine engine;
 	
-	//Engine type 을 인자로 전달 받는 생성자
+	//Engine type 을 인자로 전달 받는 생성자 (리턴타입이 없어야 생성자다, 클래스명과 같아야한다. 생성자를 하나라도 정의하면 new Car()이런 기본 생성자는 사라진다)
 	public Car(Engine engine) {
 		this.engine=engine;
 	}

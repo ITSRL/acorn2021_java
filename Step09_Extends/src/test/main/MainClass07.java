@@ -6,7 +6,7 @@ import test.mypac.SmartPhone;
 
 public class MainClass07 {
 	public static void main(String[] args) {
-		MainClass07.usePhone(new Phone());
+	 	MainClass07.usePhone(new Phone());
 		MainClass07.usePhone(new HandPhone());
 		MainClass07.usePhone(new SmartPhone());
 	}
@@ -18,6 +18,7 @@ public class MainClass07 {
 			HandPhone p2=(HandPhone)p;
 			p2.mobileCall();
 		}
+		// SmartPhone과 HandPhone은 instanceof가 true 이기 떄문에 작동할 수 있다.
 	}
 }
 

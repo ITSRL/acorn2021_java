@@ -11,15 +11,15 @@ import test.mypac.SmartPhone;
  *   1. 스마트폰을 새로 사준다(만들어서 준다)
  *   
  *   2. 스마트폰의 사용설명서만 가지고 와서 현재 폰의 설명서라고 우기고 
- *      그냥 그폰을 쓰라고 한다.
+ *      그냥 그폰을 쓰라고 한다. - 말도 안되는  상황
  *   
  */
 public class MainClass05 {
 	public static void main(String[] args) {
-		Phone p1=new Phone();
+		Phone p1=new Phone();// 1번처럼 성립 되려면 Phone p1 = new SmartPhone(); 이여야 한다.
 		//runtime 시에 ClassCastException 이 발생한다.
 		//위의 설명에서 2 번과 같은 경우이다.
-		SmartPhone p2=(SmartPhone)p1;
+		SmartPhone p2=(SmartPhone)p1; //2번 문법은 성립하긴 하지만 실행해보면 Exception이 나온다.
 		p2.doInternet();
 	}
 }

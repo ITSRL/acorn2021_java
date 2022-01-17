@@ -10,9 +10,11 @@ public class MainClass04 {
 		 *  지역변수에 담기 
 		 */
 		Weapon w1=new Weapon() {
+			
 			@Override
 			public void attack() {
-				System.out.println("아무거나 공격해요!");
+				// TODO Auto-generated method stub
+				System.out.println("아무나 공격해요!");
 			}
 		};
 		useWeapon(w1);
