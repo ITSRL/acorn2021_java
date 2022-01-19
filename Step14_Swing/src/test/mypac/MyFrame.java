@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 public class MyFrame extends JFrame{
 	//생성자
 	public MyFrame() {
+		
 		setLayout(null);
 		JButton btn=new JButton("눌러보셈");
 		btn.setBounds(50, 50, 100, 40);

@@ -4,6 +4,16 @@ import test.mypac.Calculator;
 
 public class MainClass06 {
 	public static void main(String[] args) {
+		Calculator c=new Calculator() {
+			
+			@Override
+			public double exec(double a, double b) {
+				
+				return a+b;
+			}
+		};
+		
+		
 		Calculator add=(double a, double b)->{ 
 			return a+b; 
 		};

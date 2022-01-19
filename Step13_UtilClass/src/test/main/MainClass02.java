@@ -11,7 +11,7 @@ public class MainClass02 {
 		String addr="노량진";
 		boolean isMan=true;
 		
-		//동일한 회원 정보를 HashMap  객체를 생성해서 담을수도 있다. 
+		//동일한 회원 정보를 HashMap  객체를 생성해서 담을수도 있다.  <T>은 generic class
 		Map<String, Object> map1=new HashMap<String, Object>();
 		map1.put("num", 1);
 		map1.put("name", "김구라");

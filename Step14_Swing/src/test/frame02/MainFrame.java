@@ -14,7 +14,7 @@ public class MainFrame extends JFrame{
 		super(title); //부모생성자에 전달하기 
 		//레이아웃 메니저 지정하기
 		setLayout(new FlowLayout()); //물 흐르듯이 배치되는 레이아웃 
-		//버튼 3 개를 만들고 
+		//버튼 3 개를 만들고  				순서대로 배치되고 자리가 부족하면 내려간다
 		JButton sendBtn=new JButton("전송");
 		JButton updateBtn=new JButton("수정");
 		JButton deleteBtn=new JButton("삭제");

@@ -17,8 +17,15 @@ public class MainClass04 {
 				System.out.println("아무나 공격해요!");
 			}
 		};
+		Weapon w2=new Weapon() {
+			@Override
+			public void attack() {
+				// TODO Auto-generated method stub
+				System.out.println("나혼자 공격해요!");
+			}
+		};
 		useWeapon(w1);
-		useWeapon(w1);
+		useWeapon(w2);
 	}
 	
 	public static void useWeapon(Weapon w) {

@@ -20,19 +20,27 @@ public class MainClass07 {
 		 *  ( 저는 콘솔창에 무언가를 출력하라고 하지 않았습니다. .drive() 메소드를 
 		 *    호출하라고 했습니다! )
 		 */
-		//1.
 		List<Car> cars=new ArrayList<Car>();
-		//2.
-		Car c1=new Car("소나타");
-		Car c2=new Car("아반떼");
-		Car c3=new Car("티볼리");
-		cars.add(c1);
-		cars.add(c2);
-		cars.add(c3);
-		//3. 
+		
+		Car a=new Car("그렌져");
+		Car b=new Car("아반떼");
+		Car c=new Car("K5");
+		
+		cars.add(a);
+		cars.add(b);
+		cars.add(c);
+		
+		for(int i=0; i<cars.size(); i++) {
+			Car tmp=cars.get(i);
+			tmp.drive();
+		}
+		
+		System.out.println("------------------");
+		
 		for(Car tmp:cars) {
 			tmp.drive();
 		}
+		
 	}
 }
 

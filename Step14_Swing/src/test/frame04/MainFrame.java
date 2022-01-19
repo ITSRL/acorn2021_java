@@ -51,6 +51,7 @@ public class MainFrame extends JFrame
 		
 		//JTextField 에 키보드 리스너 등록하기 
 		inputText.addKeyListener(this);
+		
 	}
 	
 	//run 했을때 실행순서가 시작되는 main 메소드

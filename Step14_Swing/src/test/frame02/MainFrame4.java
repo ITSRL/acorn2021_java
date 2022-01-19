@@ -24,7 +24,7 @@ public class MainFrame4 extends JFrame implements ActionListener{
 		add(sendBtn);
 		add(updateBtn);
 		add(deleteBtn);
-		//버튼에 리스너 등록하기
+		//버튼에 리스너 등록하기			여긴 this네? 여기서 this는 MainFrame4인데? implements 해서 내가 직접 액션리스너가 될꺼야!
 		sendBtn.addActionListener(this);
 		updateBtn.addActionListener(this);
 		deleteBtn.addActionListener(this);
@@ -45,7 +45,7 @@ public class MainFrame4 extends JFrame implements ActionListener{
 		f.setVisible(true);
 	}
 
-	// MainFrame4 가 implements ActionListener 했으므로 강제 구현된 메소드 
+	// MainFrame4 가 implements ActionListener 했으므로 강제 구현된 메소드 			그래서 생겼지!
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		//이벤트가 일어난 UI (Button) 의 ActionCommand  값을 읽어온다.

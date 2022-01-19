@@ -23,42 +23,34 @@ public class MainClass08 {
 		 *  번호 : 2, 이름 : 해골, 주소 : 행신동
 		 *  .
 		 */
+		//Map<String,Integer> num=new HashMap<>();
+		//Map<String,String> name=new HashMap<>();
+		//Map<String,String> addr=new HashMap<>();
 		
-		//1.
-		Map<String, Object> map1=new HashMap<>();
-		map1.put("num", 1);
-		map1.put("name", "김구라");
-		map1.put("addr", "노량진");
+		//List<Map<String,Object>> mem=new ArrayList<>();
+		//오 이렇겐 안되네.... 
+		Map<String,Object> map=new HashMap<>();
+		map.put("num", 1);
+		map.put("name", "김구라");
+		map.put("addr", "노량진");
 		
-		Map<String, Object> map2=new HashMap<>();
-		map2.put("num", 2);
-		map2.put("name", "해골");
-		map2.put("addr", "행신동");
+		Map<String,Object> map1=new HashMap<>();
+		map1.put("num", 2);
+		map1.put("name", "해골");
+		map1.put("addr", "행신동");	
 		
-		Map<String, Object> map3=new HashMap<>();
-		map3.put("num", 3);
-		map3.put("name", "원숭이");
-		map3.put("addr", "상도동");
+		Map<String,Object> map2=new HashMap<>();
+		map2.put("num", 3);
+		map2.put("name", "원숭이");
+		map2.put("addr", "상도동");
 		
-		//2.
-		List<Map<String, Object>> members=new ArrayList<>();
-		
-		//3.
+		List<Map<String,Object>> members=new ArrayList<>();
+		members.add(map);
 		members.add(map1);
 		members.add(map2);
-		members.add(map3);
 		
-		//4. 
-		for( Map<String, Object> tmp : members) {
-			//번호
-			int num=(int)tmp.get("num");
-			//이름
-			String name=(String)tmp.get("name");
-			//주소
-			String addr=(String)tmp.get("addr");
-			//출력하기
-			System.out.println("번호 : "+num+", 이름 : "+name+", 주소 : "+addr);
-		}
+
+		
 		
 	}
 }

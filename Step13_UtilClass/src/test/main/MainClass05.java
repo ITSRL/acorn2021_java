@@ -18,25 +18,24 @@ public class MainClass05 {
 		 *  3  .
 		 *  4  .
 		 */
-		//여러개의 문자열의 참조값을 저장하기 위해 생성한 객체
-		List<String> names=new ArrayList<String>();
-		//키보드로 부터 문자열을 입력 받기 위해 생성한 객체 (금수저)
-		Scanner scan=new Scanner(System.in);
-		//5 번 반복을 수행할 for 문 구성
-		for(int i=0; i<5 ; i++) {
-			System.out.println("친구 이름 입력:");
+		List<String> mem=new ArrayList<>();
+		
+		Scanner scan=new Scanner(System.in);		
+		
+		for(int i=0;i<5;i++) {
+			System.out.println(i+"번째 친구 이름을 입력해주세요");
 			String line=scan.nextLine();
-			names.add(line);
+			mem.add(line);
 		}
-		//반복문 돌면서 names  에 저장된 내용을 정해진 형식으로 콘솔창에 출력하기
-		for(int i=0; i<5; i++) {
-			//i 번째 저장된 아이템을 읽어와서 
-			String tmp=names.get(i);
-			System.out.println(i+" 번째 친구 이름 : "+tmp);
+		
+		for(int i=0;i<mem.size();i++) {
+			String tmp=mem.get(i);
+			System.out.println(i+"번째 친구 이름 : "+tmp);
 		}
-		System.out.println("----------------");
-		for(String tmp:names) {
-			System.out.println("친구 이름 : "+tmp);
+		
+		System.out.println("--------------------");
+		for(String tmp:mem) {
+			System.out.println(tmp+"이게 확장 for문이라네");
 		}
 	}
 }

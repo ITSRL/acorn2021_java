@@ -44,7 +44,7 @@ public class MainFrame3 extends JFrame{
 		add(sendBtn);
 		add(updateBtn);
 		add(deleteBtn);
-		//버튼에 리스너 등록하기
+		//버튼에 리스너 등록하기  			동일한 리스너로 등록했네? 위에 커맨드값을 입력해서 어떤 커맨드를 입력했는지를 판별 하면 리스너는 하나만 있으면되네?
 		sendBtn.addActionListener(listener);
 		updateBtn.addActionListener(listener);
 		deleteBtn.addActionListener(listener);

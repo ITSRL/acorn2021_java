@@ -34,8 +34,8 @@ public class MainFrame extends JFrame implements ActionListener{
 		topPanel.setBackground(Color.YELLOW);
 		
 		//페널 째로 프레임의 북쪽에 배치하기
-		add(topPanel, BorderLayout.NORTH);
-		
+		add(topPanel, BorderLayout.SOUTH);
+		//add(topPanel, "South"); 이렇게도 쓸 수 있는데 6개월 지나면 우리 이렇게 안쓸꺼야... 헷갈리니까 그냥 점찍어서 쓰는게 나을꺼야...
 		//버튼에 리스너 등록하기
 		sendBtn.addActionListener(this);
 	}

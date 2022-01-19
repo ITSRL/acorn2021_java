@@ -27,9 +27,9 @@ public class MainClass {
 		//프레임에 버튼 추가하기
 		f.add(btn);
 		//프레임을 보이게 한다. 
-		f.setVisible(true);
+		f.setVisible(true); //안보인다고 해서 프로세스가 죽은건 아니야.. x표시 눌러야 종료가 되요.
 		
-		//ActionListener  인터페이스 type 의 참조값 얻어내기 
+		//ActionListener  인터페이스 type 의 참조값 얻어내기  익명클래스로 만들었네..		
 		ActionListener listener=new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -39,8 +39,8 @@ public class MainClass {
 				JOptionPane.showMessageDialog(f, "버튼을 눌렀넹?");
 			}
 		};
-		//버튼에 액션 리스너 등록하기 
-		btn.addActionListener( listener );
+		//버튼에 액션 리스너 등록하기  여기 버튼을 누를때마다 저 위에 @Override한 메소드가 호출된다.
+		btn.addActionListener( listener ); 	//자바스크립트에서는 여기다 함수를 전달했지만 자바에서는 객체를 입력하면되는구나 
 		
 		//버튼객체 생성해서 
 		JButton btn2=new JButton("merong");
