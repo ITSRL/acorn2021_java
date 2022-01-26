@@ -17,6 +17,9 @@ public class MainClass01 {
 		}catch(NumberFormatException nfe) {
 			//2. NumberFormatException type 의 예외가 발생하면 여기가 실행된다.
 			System.out.println("숫자 형식에 맞게 입력 하세요!");
+			//getMessage를 사용해서 예외 메세지 얻어내기
+			String errorInfo=nfe.getMessage();
+			System.out.println(errorInfo);
 			//예외객체의 메소드를 이용해서 stack 에 일어난 일을 콘솔에 출력하기 
 			nfe.printStackTrace();
 		}

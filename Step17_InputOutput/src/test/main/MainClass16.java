@@ -39,6 +39,7 @@ public class MainClass16 {
 				//FileOutputStream  객체를 이용해서 
 				//byte 배열에 담긴 데이터를 0번 인덱스로 부터 읽은 갯수만큼 출력한다.
 				fos.write(buffer, 0, readedCount);
+				System.out.println("readedCount "+readedCount);
 			}
 			
 			System.out.println("파일을 성공적으로 복사 했습니다.");

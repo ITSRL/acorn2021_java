@@ -14,7 +14,7 @@ import test.util.DBConnect;
 public class MainClass05 {
 	public static void main(String[] args) {
 		//삭제할 회원의 번호 
-		int num=806;
+		int num=2;
 		
 		//필요한 참조값을 담을 지역 변수 미리 만들고 초기화 하기 
 		Connection conn=null;

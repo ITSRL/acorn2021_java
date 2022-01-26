@@ -22,7 +22,7 @@ public class MainClass14 {
 			//아래의 두줄의 코드를 무한 루프에서 수행을 하다가
 			//readLine() 메소드가 null 을 리턴하면 반복문 탈출
 			while(true) {
-				String line=br.readLine();
+				String line=br.readLine(); //개행기호는 읽어오지 않는다.
 				if(line==null) {
 					break;
 				}

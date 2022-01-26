@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 public class MainFrame extends JFrame implements ActionListener{
 	//콤보 박스의 문자열 아이템을 String[] 로 미리 준비하기 
 	String[] usergame= {"가위","바위","보"};
-	JComboBox<String> combo;
+	JComboBox<String> combo;// JComboBox(E[]) 제뉴릭에 배열이다?
 	JLabel lab1;
 	JLabel lab2;
 	//생성자

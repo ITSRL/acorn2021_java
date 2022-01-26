@@ -29,7 +29,7 @@ public class MainFrame extends JFrame implements ActionListener{
 		//랜덤한 값을 얻어내기 위한 객체 생성
 		Random ran=new Random();
 		//0~9 사이의 랜덤한 정수 
-		int ranNum=ran.nextInt(3); //0 이상 10미만의 랜덤한 정수 
+		int ranNum=ran.nextInt(10); //0 이상 10미만의 랜덤한 정수 
 		JOptionPane.showMessageDialog(this, "발생된 랜덤 정수: "+ranNum);
 	}
 	

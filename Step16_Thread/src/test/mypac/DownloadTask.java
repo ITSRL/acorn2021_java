@@ -14,7 +14,7 @@ package test.mypac;
 public class DownloadTask implements Runnable{
 
 	@Override
-	public void run() {
+	public void run() {  					//이 객체는 1회용이야
 		System.out.println("다운로드를 시작 합니다...");
 		try {
 			for(int i=1; i<=100; i++) {

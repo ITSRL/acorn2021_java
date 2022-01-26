@@ -25,9 +25,9 @@ public class MainFrame05 extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		JOptionPane.showMessageDialog(this, "알림 입니다.!!!");
-		//Runnalbe 인터페이스 type 의 참조값을 얻어내서 
-		Runnable downTask=new DownloadTask();
-		Thread t=new Thread(downTask);
+		//Runnable 인터페이스 type 의 참조값을 얻어내서 데이터타입 Runnable 인터페이스 타입으로 얻는게 일반적이지만 DownloadTask로 받을 수도 있다.
+		Runnable downTask=new DownloadTask();	//여기랑 			따로 만들어두고 필요할때마다 start할 수 있느냐? 없다. 왜냐?
+		Thread t=new Thread(downTask);			//여기를 			DownloadTask는 일회용이니까 쓸때마다 불러와야됨.
 		t.start();
 		
 		System.out.println("actionPerformed() 메소드가 리턴 합니다.");

@@ -3,6 +3,7 @@ package test.main;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import test.util.DBConnect;
@@ -26,41 +27,30 @@ import test.util.DBConnect;
  */
 public class MainClass06 {
 	public static void main(String[] args) {
-		//콘솔창으로 부터 입력 받을 객체 생성
 		Scanner scan=new Scanner(System.in);
-		//콘솔창에 입력한 값을 정수로 얻어낸다. 
-		System.out.println("검색할 회원 번호 입력:");
+		System.out.println("검색할 회원번호 입력:");
 		int num=scan.nextInt();
 		
-		//필요한 객체를 담을 지역변수 미리 만들기 
 		Connection conn=null;
 		PreparedStatement pstmt=null;
-		ResultSet rs=null; 
-		try {
-			//Connection 객체의 참조값 얻어오기 
+		ResultSet rs=null;
+		try {		
 			conn=new DBConnect().getConn();
-			//실행할 SELECT 문의 뼈대 준비하기
-			String sql="SELECT name,addr FROM member WHERE num=?";
-			//PreparedStatement 객체
+			String sql="select num, name, addr from member where num=?";
+
 			pstmt=conn.prepareStatement(sql);
-			//? 에 값 바인딩해서 SELECT 문 완성하기
 			pstmt.setInt(1, num);
-			//쿼리문(SELECT) 수행하고 결과를 ResultSet 으로 받아오기 
+			
 			rs=pstmt.executeQuery();
-			/*
-			 *  member table 에서 num 은 PRIMARY KEY 값이다
-			 *  따라서 SELECT 된 결과 row 의 갯수는
-			 *  0 이거나 1 이된다. 
-			 */
 			if(rs.next()) {
-				//select 된 row 가 존재한다면 커서가 위치한곳의 데이터 얻어오기
 				String name=rs.getString("name");
 				String addr=rs.getString("addr");
 				System.out.println("번호:"+num+", 이름:"+name+", 주소:"+addr);
 			}else {
-				System.out.println(num+" 번 회원은 존재하지 않습니다.");
+				System.out.println(num+"번 회원은 존재 하지 않습니다.");
 			}
-		}catch(Exception e) {
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 			try {
@@ -69,9 +59,10 @@ public class MainClass06 {
 				if(conn!=null)conn.close();
 			}catch(Exception e) {}
 		}
+		
+		System.out.println("main 메소드가 종료 됩니다.");
 	}
 }
-
 
 
 

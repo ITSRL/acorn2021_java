@@ -19,18 +19,18 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-import test.member.dao.MemberDao;
-import test.member.dto.MemberDto;
+import test.dept.dao.DeptDao;
+import test.dept.dto.DeptDto;
 
-public class MemberFrame extends JFrame 
+public class DeptFrame2 extends JFrame 
 				implements ActionListener, PropertyChangeListener{
 	//필드 
-	JTextField text_name,  text_addr;
+	JTextField text_dname,  text_loc;
 	DefaultTableModel model;
 	JTable table;
 	
 	//생성자
-	public MemberFrame(String title) {
+	public DeptFrame2(String title) {
 		super(title);
 		//프레임의 레이아웃 법칙 지정하기
 		setLayout(new BorderLayout());
@@ -40,17 +40,17 @@ public class MemberFrame extends JFrame
 		//페널을 상단에 배치하기 
 		add(topPanel, BorderLayout.NORTH);
 		//페널에 추가할 UI 객체를 생성해서 
-		JLabel label_name=new JLabel("이름");
-		JLabel label_addr=new JLabel("주소");
+		JLabel label_dname=new JLabel("부서명");
+		JLabel label_loc=new JLabel("위치");
 		//아래 메소드에서 필요한값을 필드에 저장하기 
-		text_name=new JTextField(10);
-		text_addr=new JTextField(10);
+		text_dname=new JTextField(10);
+		text_loc=new JTextField(10);
 		JButton btn_add=new JButton("추가");
 		//페널에 순서대로 추가하기
-		topPanel.add(label_name);
-		topPanel.add(text_name);
-		topPanel.add(label_addr);
-		topPanel.add(text_addr);
+		topPanel.add(label_dname);
+		topPanel.add(text_dname);
+		topPanel.add(label_loc);
+		topPanel.add(text_loc);
 		topPanel.add(btn_add);
 		//버튼에 Action command 지정
 		btn_add.setActionCommand("add");
@@ -60,9 +60,9 @@ public class MemberFrame extends JFrame
 		//회원 목록을 출력할 테이블
 		table=new JTable();
 		//칼럼명을 String[] 에 순서대로 준비하기
-		String[] colNames= {"번호","이름","주소"};
+		String[] colDnames= {"부서번호","부서명","위치"};
 		//테이블에 연결할 기본 모델 객체
-		model=new DefaultTableModel(colNames, 0) {
+		model=new DefaultTableModel(colDnames, 0) {
 			@Override
 			public boolean isCellEditable(int row, int column) {
 				System.out.println(row+"|"+column);
@@ -102,18 +102,18 @@ public class MemberFrame extends JFrame
 	public void printMember() {
 		
 		//회원 목록 불러오기
-		MemberDao dao=new MemberDao();
-		List<MemberDto> list=dao.selectAll();
+		DeptDao dao=new DeptDao();
+		List<DeptDto> list=dao.selectAll();
 		//기존에 출력된 내용 초기화
 		model.setRowCount(0); // 0 개의 row 로 강제로 초기화 하고 
 				
-		for(MemberDto tmp:list) {
+		for(DeptDto tmp:list) {
 			// {1, "김구라", "노량진" }
-			//Object[] row= {tmp.getNum(), tmp.getName(), tmp.getAddr()};
+			//Object[] row= {tmp.getDeptno(), tmp.getDname(), tmp.getLoc()};
 			Vector<Object> row=new Vector<>();
-			row.add(tmp.getNum());
-			row.add(tmp.getName());
-			row.add(tmp.getAddr());
+			row.add(tmp.getDeptNo());
+			row.add(tmp.getdName());
+			row.add(tmp.getLoc());
 	
 			model.addRow(row);
 		}
@@ -121,7 +121,7 @@ public class MemberFrame extends JFrame
 	
 	//메인 메소드
 	public static void main(String[] args) {
-		MemberFrame f=new MemberFrame("회원정보 관리");
+		DeptFrame2 f=new DeptFrame2("회원정보 관리");
 		f.setBounds(100, 100, 800, 500);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setVisible(true);
@@ -144,14 +144,14 @@ public class MemberFrame extends JFrame
 			JOptionPane.showMessageDialog(this,"삭제할 row 를 선택해라");
 			return;//메소드를 여기서 끝내라 
 		}
-		//선택한 row 의 0 번 칼럼의 값(번호)을 읽어와서 int 로 casting 하기 
+		//선택한 row 의 0 번 칼럼의 값(부서번호)을 읽어와서 int 로 casting 하기 
 		int num=(int)table.getValueAt(selectedIndex, 0);
 		//삭제 하기전에 한번 확인하기
 		int result=JOptionPane.showConfirmDialog(this, num+" 번 회원을 삭제할겨?");
 		//만일 yes 를 눌렀을때 
 		if(result == JOptionPane.YES_OPTION) {
-			//MemberDao 객체를 이용해서 삭제하기
-			new MemberDao().delete(num);
+			//DeptDao 객체를 이용해서 삭제하기
+			new DeptDao().delete(num);
 			//UI 업데이트 (목록 다시 출력하기)
 			printMember();
 		}
@@ -160,20 +160,20 @@ public class MemberFrame extends JFrame
 	//회원정보를 추가하는 메소드  (db의 내용을 초기화 한다음에 다시 생성해서 출력한다.)
 	public void addMember() {
 		
-		//1. 입력한 이름과 주소를 읽어와서
-		String name=text_name.getText();
-		String addr=text_addr.getText();
-		//2. MemberDto 객체에 담고
-		MemberDto dto=new MemberDto();
-		dto.setName(name);
-		dto.setAddr(addr);
-		//3. MemberDao 객체를 이용해서 DB 에 저장
-		MemberDao dao=new MemberDao();
+		//1. 입력한 이름과 위치를 읽어와서
+		String dname=text_dname.getText();
+		String loc=text_loc.getText();
+		//2. DeptDto 객체에 담고
+		DeptDto dto=new DeptDto();
+		dto.setdName(dname);
+		dto.setLoc(loc);
+		//3. DeptDao 객체를 이용해서 DB 에 저장
+		DeptDao dao=new DeptDao();
 		//작업의 성공여부를 isSuccess 에 담기 
 		boolean isSuccess=dao.insert(dto);
 		//실제 저장되었는지 확인해 보세요.
 		if(isSuccess) {
-			JOptionPane.showMessageDialog(this, name+" 의 정보 추가성공");
+			JOptionPane.showMessageDialog(this, dname+" 의 정보 추가성공");
 			//테이블에 다시 목록 불러오기
 			printMember();
 		}else {
@@ -213,10 +213,10 @@ public class MemberFrame extends JFrame
 				//수정된 row 를 읽어와서 DB 에 반영한다.
 				int selectedIndex=table.getSelectedRow();
 				int num=(int)model.getValueAt(selectedIndex, 0);
-				String name=(String)model.getValueAt(selectedIndex, 1);
-				String addr=(String)model.getValueAt(selectedIndex, 2);
-				MemberDto dto=new MemberDto(num, name, addr);
-				new MemberDao().update(dto);
+				String dname=(String)model.getValueAt(selectedIndex, 1);
+				String loc=(String)model.getValueAt(selectedIndex, 2);
+				DeptDto dto=new DeptDto(num, dname, loc);
+				new DeptDao().update(dto);
 			}
 			//isEditing 의 값을 반대로 바꿔준다. true => false, false => true
 			isEditing=!isEditing;

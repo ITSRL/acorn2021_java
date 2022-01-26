@@ -82,6 +82,8 @@ public class MainFrame extends JFrame implements ActionListener{
 			label_result.setText(strNum);
 		}catch(NumberFormatException nfe) {
 			JOptionPane.showMessageDialog(this, "숫자 형식으로 입력해 주세요");
+			inputNum1.setText("");
+			inputNum2.setText("");
 		}
 	}
 	
